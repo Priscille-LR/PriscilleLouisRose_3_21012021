@@ -8,13 +8,13 @@ body {
 }
 
 h1 {
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
   color: black;
 }
 
 h2 {
-  font-size: large;
+  font-size: medium;
   color: black;
 }
 
@@ -24,16 +24,58 @@ h3 {
   color: black;
 }
 
-footer {
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+}
+
+.search__bar {
+  background-color: #EAEAEA;
+   
+}
+
+.main_title {
+  background-color: #F6F6F6;
+  display: flex;   
+  flex-wrap: wrap;
+  &__btn {
+    // display: flex;
+    text-align: center;
+    width: 50%;
+    background-color: #9356DC;
+    color: white;
+    font-size: smaller;
+    border-radius: 15px;
+    padding: 10px;
+  }
+}
+
+
+
+
+
+.footer {
   background-color: #343434;
+  padding: 0.5rem;
   h1 {
     font-family:'Shrikhand', cursive;
     color: white;
+    padding: 0.5rem;
   }
   a {
-  text-decoration: none;
+    text-decoration: none;
   }
   ul {
-  list-style-type: none;
+    list-style-type: none;
   }
+  li {
+    color:white;
+    margin: 0.5rem;
+  }
+  i {
+    color: white;
+    }
+  
 }

@@ -7,13 +7,13 @@ body {
 }
 
 h1 {
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
   color: black;
 }
 
 h2 {
-  font-size: large;
+  font-size: medium;
   color: black;
 }
 
@@ -23,18 +23,53 @@ h3 {
   color: black;
 }
 
-footer {
-  background-color: #343434;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
 }
-footer h1 {
+
+.search__bar {
+  background-color: #EAEAEA;
+}
+
+.main_title {
+  background-color: #F6F6F6;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main_title__btn {
+  text-align: center;
+  width: 50%;
+  background-color: #9356DC;
+  color: white;
+  font-size: smaller;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.footer {
+  background-color: #343434;
+  padding: 0.5rem;
+}
+.footer h1 {
   font-family: "Shrikhand", cursive;
   color: white;
+  padding: 0.5rem;
 }
-footer a {
+.footer a {
   text-decoration: none;
 }
-footer ul {
+.footer ul {
   list-style-type: none;
+}
+.footer li {
+  color: white;
+  margin: 0.5rem;
+}
+.footer i {
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
