@@ -14,12 +14,18 @@ h1 {
 }
 
 h2 {
-  font-size: medium;
+  font-size: larger;
   color: black;
   margin: 0px;
 }
 
 h3 {
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+}
+
+h4 {
   font-size: medium;
   font-weight: lighter;
   color: black;
@@ -43,8 +49,8 @@ header {
   align-items: center;
   background-color: #EAEAEA;
 }
-.search .search__bar ::before {
-  margin: 20px;
+.search .search__bar p {
+  margin: 1rem;
 }
 .search .main_title {
   background-color: #F6F6F6;
@@ -53,7 +59,7 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
   text-align: center;
 }
 .search .main_title__btn {
@@ -74,7 +80,7 @@ header {
   flex-direction: column;
   margin: 1rem;
 }
-.functioning h1 {
+.functioning h2 {
   margin: 1rem 0;
 }
 .functioning__step {
@@ -120,7 +126,7 @@ header {
   background-color: #F6F6F6;
   padding: 3rem 0;
 }
-.restaurants h1 {
+.restaurants h2 {
   margin: 1rem;
 }
 .restaurants .thumbnail_restaurant {
@@ -164,10 +170,10 @@ header {
   display: flex;
   flex-direction: column;
 }
-.restaurants .thumbnail_restaurant__content__name h2 {
+.restaurants .thumbnail_restaurant__content__name h3 {
   margin: 0.1rem;
 }
-.restaurants .thumbnail_restaurant__content__name h3 {
+.restaurants .thumbnail_restaurant__content__name h4 {
   margin: 0.1rem;
 }
 
@@ -178,7 +184,7 @@ header {
 .footer h1 {
   font-family: "Shrikhand", cursive;
   color: white;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .footer a {
   text-decoration: none;
@@ -189,7 +195,7 @@ header {
   padding: 0px;
 }
 .footer li {
-  margin: 0.5rem;
+  margin: 1rem;
 }
 .footer li ::before {
   color: white;
