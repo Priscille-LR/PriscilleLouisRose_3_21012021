@@ -1,9 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap');
-$color-primary:  #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$bg-color: #F6F6F6;
-$shadow: 5px 5px 10px #D9D9D9;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap");
+//$color-primary:  #9356DC;
+// $color-secondary: #FF79DA;
+// $color-tertiary: #99E2D0;
+// $bg-color: #F6F6F6;
+// $shadow: 5px 5px 10px #D9D9D9;
+
+// $breakpoints:(
+//   tablet: 768px, desktop: 1100px
+// );
+
+// @mixin tablet {
+//   @media screen and (min-width: map-get($breakpoints, tablet)){
+//     @content;
+//   }
+// }
+
+// @mixin desktop {
+//   @media screen and (min-width: map-get($map: $breakpoints, $key:desktop)){
+//     @content;
+//   }
+// }
+
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
 
 body {
   font-family: "Roboto", sans-serif;
@@ -27,13 +46,13 @@ h2 {
 
 h3 {
   font-size: medium;
-  font-weight:bold;
+  font-weight: bold;
   color: black;
 }
 
 h4 {
   font-size: medium;
-  font-weight:lighter;
+  font-weight: lighter;
   color: black;
 }
 header {
@@ -42,6 +61,12 @@ header {
   align-items: center;
   height: 4rem;
   // box-shadow: 0px 20px 10px -20px black;
+  & a {
+    margin: 1rem;
+  }
+  @include tablet {
+    justify-content: flex-start;
+  }
 }
 
 .search {
@@ -52,7 +77,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #EAEAEA;
+    background-color: #eaeaea;
     // ::before {
     //   // margin: 20px;
     // }
@@ -69,6 +94,10 @@ header {
     align-items: center;
     padding: 4rem 2rem;
     text-align: center;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
     &__btn {
       display: flex;
       flex-wrap: nowrap;
@@ -104,7 +133,7 @@ header {
     padding: 0.5rem;
     width: 90%;
     & i {
-      color: #7E7E7E;
+      color: #7e7e7e;
       margin: 1rem;
     }
     &__order {
@@ -118,10 +147,9 @@ header {
       border-radius: 20px;
       padding: 5px;
       text-align: center;
-      
     }
     &:hover {
-      background-color: #F5EDFF;
+      background-color: #f5edff;
       & i {
         color: $color-primary;
       }
@@ -129,38 +157,66 @@ header {
   }
 }
 
-
-
-
 // restaurants
+
 .restaurants {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
   background-color: $bg-color;
-  padding: 3rem 0;
-    h2 {
-      margin: 1rem;
+  padding: 2rem 0;
+  // @include tablet {
+  //   border-radius: 20px;
+  // }
+  h2 {
+    margin: 1rem;
+  }
+  .restaurants__thumbnails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    // padding: 3rem 0;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
     .thumbnail_restaurant {
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border-radius: 20px;
+      border-radius: 15px;
       box-shadow: $shadow;
       text-decoration: none;
       margin: 15px;
       height: 17rem;
-      overflow: hidden;
       &__picture {
-        // position: relative;
-        // display: flex;
-        width: 100%; 
+        width: 100%;
         height: 70%;
-        object-fit: cover; 
-        // border-radius: 20px 20px 0px 0px;
+        border-radius: 15px 15px 0px 0px;
+        object-fit: cover;
+        @include tablet {
+          // max-width: 250px;
+          width: 20rem;
+        }
+      }
+      &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        height: 30%;
+
+        &__name {
+          display: flex;
+          flex-direction: column;
+          h3 {
+            margin: 0.1rem;
+          }
+          h4 {
+            margin: 0.1rem;
+          }
+        }
       }
       &--new {
         position: absolute;
@@ -168,35 +224,15 @@ header {
         top: 5%;
         right: 5%;
         background-color: $color-tertiary;
-        color: #1F8766;
+        color: #1f8766;
         text-align: center;
         padding: 0.3rem;
         border-radius: 3px;
         min-width: 20%;
-        }
-        &__content {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem;
-          // width: 100%; 
-          height: 30%;
-          &__name {
-            display: flex;
-            flex-direction: column;
-            h3 {
-              margin: 0.1rem;
-            }
-            h4 {
-              margin: 0.1rem;
-            }
-          }
-        }
+      }
+    }
   }
-
 }
-
 
 // footer
 
@@ -204,13 +240,13 @@ header {
   background-color: #343434;
   padding: 0.5rem;
   h1 {
-    font-family:'Shrikhand', cursive;
+    font-family: "Shrikhand", cursive;
     color: white;
     padding: 1rem;
   }
   a {
     text-decoration: none;
-    color:white;
+    color: white;
   }
   ul {
     list-style-type: none;
@@ -219,8 +255,8 @@ header {
   li {
     margin: 1rem;
     ::before {
-    color: white;
-    margin-right: 10px;
+      color: white;
+      margin-right: 10px;
     }
   }
 }
