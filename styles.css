@@ -14,19 +14,19 @@ h1 {
 }
 
 h2 {
-  font-size: larger;
+  font-size: x-large;
   color: black;
   margin: 0px;
 }
 
 h3 {
-  font-size: medium;
+  font-size: large;
   font-weight: bold;
   color: black;
 }
 
 h4 {
-  font-size: medium;
+  font-size: large;
   font-weight: lighter;
   color: black;
 }
@@ -40,7 +40,7 @@ header {
 header a {
   margin: 1rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   header {
     justify-content: flex-start;
   }
@@ -60,6 +60,11 @@ header a {
 .search .search__bar p {
   margin: 1rem;
 }
+@media screen and (min-width: 800px) {
+  .search .search__bar p {
+    font-size: large;
+  }
+}
 .search .main_title {
   background-color: #F6F6F6;
   display: flex;
@@ -70,10 +75,13 @@ header a {
   padding: 4rem 2rem;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .search .main_title {
-    flex-direction: row;
-    justify-content: flex-start;
+    font-size: x-large;
+    align-items: flex-start;
+  }
+  .search .main_title h4 {
+    font-size: large;
   }
 }
 .search .main_title__btn {
@@ -88,16 +96,36 @@ header a {
   padding: 10px;
   box-shadow: 5px 5px 10px #D9D9D9;
 }
+@media screen and (min-width: 800px) {
+  .search .main_title__btn {
+    width: 30%;
+    align-self: flex-start;
+  }
+}
 
 .functioning {
+  padding: 2rem 0;
+}
+.functioning h2 {
+  margin: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .functioning h2 {
+    margin: 1rem 2rem;
+    font-size: x-large;
+  }
+}
+.functioning__steps {
   display: flex;
   flex-direction: column;
   margin: 1rem;
 }
-.functioning h2 {
-  margin: 1rem 0;
+@media screen and (min-width: 800px) {
+  .functioning__steps {
+    flex-direction: row;
+  }
 }
-.functioning__step {
+.functioning__steps__step {
   position: relative;
   display: flex;
   align-items: center;
@@ -109,11 +137,16 @@ header a {
   padding: 0.5rem;
   width: 90%;
 }
-.functioning__step i {
+@media screen and (min-width: 800px) {
+  .functioning__steps__step {
+    margin: 1rem;
+  }
+}
+.functioning__steps__step i {
   color: #7e7e7e;
   margin: 1rem;
 }
-.functioning__step__order {
+.functioning__steps__step__order {
   position: absolute;
   z-index: 1;
   left: -3%;
@@ -125,31 +158,49 @@ header a {
   padding: 5px;
   text-align: center;
 }
-.functioning__step:hover {
+.functioning__steps__step:hover {
   background-color: #f5edff;
 }
-.functioning__step:hover i {
+.functioning__steps__step:hover i {
   color: #9356DC;
 }
 
 .restaurants {
+  display: flex;
+  flex-direction: column;
   background-color: #F6F6F6;
   padding: 2rem 0;
 }
+@media screen and (min-width: 800px) {
+  .restaurants {
+    border-radius: 20px;
+    margin: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .restaurants h2 {
   margin: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .restaurants h2 {
+    margin: 1rem 3rem;
+    font-size: x-large;
+  }
 }
 .restaurants .restaurants__thumbnails {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .restaurants .restaurants__thumbnails {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
 .restaurants .restaurants__thumbnails .thumbnail_restaurant {
@@ -163,16 +214,23 @@ header a {
   margin: 15px;
   height: 17rem;
 }
+@media screen and (min-width: 800px) {
+  .restaurants .restaurants__thumbnails .thumbnail_restaurant {
+    margin: 2rem;
+    width: 20rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .restaurants .restaurants__thumbnails .thumbnail_restaurant {
+    width: 30rem;
+    height: 20rem;
+  }
+}
 .restaurants .restaurants__thumbnails .thumbnail_restaurant__picture {
   width: 100%;
   height: 70%;
   border-radius: 15px 15px 0px 0px;
   object-fit: cover;
-}
-@media screen and (min-width: 768px) {
-  .restaurants .restaurants__thumbnails .thumbnail_restaurant__picture {
-    width: 20rem;
-  }
 }
 .restaurants .restaurants__thumbnails .thumbnail_restaurant__content {
   display: flex;
