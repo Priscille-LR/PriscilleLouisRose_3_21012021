@@ -1,36 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap");
-body {
-  font-family: "Roboto", sans-serif;
-  color: black;
-  padding: 0px;
-  margin: 0px;
-}
-
-h1 {
-  font-size: larger;
-  font-weight: bold;
-  color: black;
-  margin: 0px;
-}
-
-h2 {
-  font-size: x-large;
-  color: black;
-  margin: 0px;
-}
-
-h3 {
-  font-size: large;
-  font-weight: bold;
-  color: black;
-}
-
-h4 {
-  font-size: large;
-  font-weight: lighter;
-  color: black;
-}
-
+@import "../base/fonts.css";
 header {
   display: flex;
   justify-content: center;
@@ -82,6 +51,14 @@ header a {
   }
   .search .main_title h4 {
     font-size: large;
+  }
+}
+@media screen and (min-width: 800px) and (min-width: 1000px) {
+  .search .main_title {
+    background: #ff79da;
+    background: linear-gradient(180deg, #ff79da 0%, #99e2d0 100%);
+    opacity: 0.5;
+    color: white;
   }
 }
 .search .main_title__btn {
@@ -243,12 +220,6 @@ header a {
 .restaurants .restaurants__thumbnails .thumbnail_restaurant__content__name {
   display: flex;
   flex-direction: column;
-}
-.restaurants .restaurants__thumbnails .thumbnail_restaurant__content__name h3 {
-  margin: 0.1rem;
-}
-.restaurants .restaurants__thumbnails .thumbnail_restaurant__content__name h4 {
-  margin: 0.1rem;
 }
 .restaurants .restaurants__thumbnails .thumbnail_restaurant--new {
   position: absolute;
