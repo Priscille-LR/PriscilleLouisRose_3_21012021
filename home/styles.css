@@ -229,9 +229,8 @@ header a {
   background-color: #99E2D0;
   color: #1f8766;
   text-align: center;
-  padding: 0.3rem;
+  padding: 1rem;
   border-radius: 3px;
-  min-width: 20%;
 }
 
 .footer {

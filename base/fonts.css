@@ -9,13 +9,13 @@ h1 {
   font-size: larger;
   font-weight: bold;
   color: black;
-  margin: 0px;
+  margin: 0.5rem;
 }
 
 h2 {
   font-size: x-large;
   color: black;
-  margin: 0px;
+  margin: 0.5rem;
 }
 
 h3 {
