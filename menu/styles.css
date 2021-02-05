@@ -15,12 +15,22 @@ header i {
   align-self: center;
   color: black;
 }
+@media screen and (min-width: 1000px) {
+  header {
+    justify-content: space-between;
+  }
+}
 
 .restaurant__picture {
   position: absolute;
   object-fit: cover;
   width: 100%;
   height: 11rem;
+}
+@media screen and (min-width: 1000px) {
+  .restaurant__picture {
+    height: 20rem;
+  }
 }
 
 .menu {
@@ -30,10 +40,21 @@ header i {
   z-index: 1;
   border-radius: 20px 20px 0px 0px;
 }
+@media screen and (min-width: 1000px) {
+  .menu {
+    margin-top: 20rem;
+  }
+}
 .menu__title {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+@media screen and (min-width: 1000px) {
+  .menu__title {
+    justify-content: space-between;
+    margin: 2rem;
+  }
 }
 .menu__title h1 {
   font-family: "Shrikhand", cursive;
@@ -41,21 +62,52 @@ header i {
   font-weight: normal;
   margin: 1rem;
 }
-.menu .courses {
-  margin: 2rem 0rem;
+@media screen and (min-width: 1000px) {
+  .menu__title h1 {
+    font-size: xx-large;
+    margin: 2rem;
+  }
 }
-.menu .courses h2 {
+@media screen and (min-width: 1400px) {
+  .menu__title h1 {
+    font-size: xxx-large;
+    margin: 2rem;
+  }
+}
+.menu .courses_main {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1400px) {
+  .menu .courses_main {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: center;
+  }
+}
+.menu .courses_main .courses {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0rem;
+}
+.menu .courses_main .courses h2 {
   font-weight: lighter;
   font-size: large;
   margin: 1rem;
 }
-.menu .courses h2::after {
+.menu .courses_main .courses h2::after {
   content: "";
   position: absolute;
   background-color: #99E2D0;
   width: 2px;
 }
-.menu .courses__item--1 {
+@media screen and (min-width: 1400px) {
+  .menu .courses_main .courses {
+    margin: 0rem 1rem;
+  }
+}
+.menu .courses_main .courses__item--1 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -64,33 +116,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 111.1111111111ms;
 }
-.menu .courses__item--1__content {
+.menu .courses_main .courses__item--1__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--1__content h3 {
+.menu .courses_main .courses__item--1__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--1__content__description_and_price {
+.menu .courses_main .courses__item--1__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--1__content__description_and_price h4 {
+.menu .courses_main .courses__item--1__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--1__content__description_and_price p {
+.menu .courses_main .courses__item--1__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--1__checked {
+.menu .courses_main .courses__item--1__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,28 +151,28 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--1__checked i {
+.menu .courses_main .courses__item--1__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--1:hover .courses__item--1__content {
+.menu .courses_main .courses__item--1:hover .courses__item--1__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--1:not(:hover) .courses__item--1__content {
+.menu .courses_main .courses__item--1:not(:hover) .courses__item--1__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--1:hover .courses__item--1__checked {
+.menu .courses_main .courses__item--1:hover .courses__item--1__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--1:hover .courses__item--1__checked i {
+.menu .courses_main .courses__item--1:hover .courses__item--1__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--1:not(:hover) .courses__item--1__checked {
+.menu .courses_main .courses__item--1:not(:hover) .courses__item--1__checked {
   animation: checked_hover_out 500ms forwards;
 }
-.menu .courses__item--2 {
+.menu .courses_main .courses__item--2 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -129,33 +181,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 222.2222222222ms;
 }
-.menu .courses__item--2__content {
+.menu .courses_main .courses__item--2__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--2__content h3 {
+.menu .courses_main .courses__item--2__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--2__content__description_and_price {
+.menu .courses_main .courses__item--2__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--2__content__description_and_price h4 {
+.menu .courses_main .courses__item--2__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--2__content__description_and_price p {
+.menu .courses_main .courses__item--2__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--2__checked {
+.menu .courses_main .courses__item--2__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,28 +216,28 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--2__checked i {
+.menu .courses_main .courses__item--2__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--2:hover .courses__item--2__content {
+.menu .courses_main .courses__item--2:hover .courses__item--2__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--2:not(:hover) .courses__item--2__content {
+.menu .courses_main .courses__item--2:not(:hover) .courses__item--2__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--2:hover .courses__item--2__checked {
+.menu .courses_main .courses__item--2:hover .courses__item--2__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--2:hover .courses__item--2__checked i {
+.menu .courses_main .courses__item--2:hover .courses__item--2__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--2:not(:hover) .courses__item--2__checked {
+.menu .courses_main .courses__item--2:not(:hover) .courses__item--2__checked {
   animation: checked_hover_out 500ms forwards;
 }
-.menu .courses__item--3 {
+.menu .courses_main .courses__item--3 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -194,33 +246,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 333.3333333333ms;
 }
-.menu .courses__item--3__content {
+.menu .courses_main .courses__item--3__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--3__content h3 {
+.menu .courses_main .courses__item--3__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--3__content__description_and_price {
+.menu .courses_main .courses__item--3__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--3__content__description_and_price h4 {
+.menu .courses_main .courses__item--3__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--3__content__description_and_price p {
+.menu .courses_main .courses__item--3__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--3__checked {
+.menu .courses_main .courses__item--3__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,28 +281,28 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--3__checked i {
+.menu .courses_main .courses__item--3__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--3:hover .courses__item--3__content {
+.menu .courses_main .courses__item--3:hover .courses__item--3__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--3:not(:hover) .courses__item--3__content {
+.menu .courses_main .courses__item--3:not(:hover) .courses__item--3__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--3:hover .courses__item--3__checked {
+.menu .courses_main .courses__item--3:hover .courses__item--3__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--3:hover .courses__item--3__checked i {
+.menu .courses_main .courses__item--3:hover .courses__item--3__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--3:not(:hover) .courses__item--3__checked {
+.menu .courses_main .courses__item--3:not(:hover) .courses__item--3__checked {
   animation: checked_hover_out 500ms forwards;
 }
-.menu .courses__item--4 {
+.menu .courses_main .courses__item--4 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -259,33 +311,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 444.4444444444ms;
 }
-.menu .courses__item--4__content {
+.menu .courses_main .courses__item--4__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--4__content h3 {
+.menu .courses_main .courses__item--4__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--4__content__description_and_price {
+.menu .courses_main .courses__item--4__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--4__content__description_and_price h4 {
+.menu .courses_main .courses__item--4__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--4__content__description_and_price p {
+.menu .courses_main .courses__item--4__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--4__checked {
+.menu .courses_main .courses__item--4__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -294,28 +346,28 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--4__checked i {
+.menu .courses_main .courses__item--4__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--4:hover .courses__item--4__content {
+.menu .courses_main .courses__item--4:hover .courses__item--4__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--4:not(:hover) .courses__item--4__content {
+.menu .courses_main .courses__item--4:not(:hover) .courses__item--4__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--4:hover .courses__item--4__checked {
+.menu .courses_main .courses__item--4:hover .courses__item--4__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--4:hover .courses__item--4__checked i {
+.menu .courses_main .courses__item--4:hover .courses__item--4__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--4:not(:hover) .courses__item--4__checked {
+.menu .courses_main .courses__item--4:not(:hover) .courses__item--4__checked {
   animation: checked_hover_out 500ms forwards;
 }
-.menu .courses__item--5 {
+.menu .courses_main .courses__item--5 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -324,33 +376,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 555.5555555556ms;
 }
-.menu .courses__item--5__content {
+.menu .courses_main .courses__item--5__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--5__content h3 {
+.menu .courses_main .courses__item--5__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--5__content__description_and_price {
+.menu .courses_main .courses__item--5__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--5__content__description_and_price h4 {
+.menu .courses_main .courses__item--5__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--5__content__description_and_price p {
+.menu .courses_main .courses__item--5__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--5__checked {
+.menu .courses_main .courses__item--5__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,28 +411,28 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--5__checked i {
+.menu .courses_main .courses__item--5__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--5:hover .courses__item--5__content {
+.menu .courses_main .courses__item--5:hover .courses__item--5__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--5:not(:hover) .courses__item--5__content {
+.menu .courses_main .courses__item--5:not(:hover) .courses__item--5__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--5:hover .courses__item--5__checked {
+.menu .courses_main .courses__item--5:hover .courses__item--5__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--5:hover .courses__item--5__checked i {
+.menu .courses_main .courses__item--5:hover .courses__item--5__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--5:not(:hover) .courses__item--5__checked {
+.menu .courses_main .courses__item--5:not(:hover) .courses__item--5__checked {
   animation: checked_hover_out 500ms forwards;
 }
-.menu .courses__item--6 {
+.menu .courses_main .courses__item--6 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -389,33 +441,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 666.6666666667ms;
 }
-.menu .courses__item--6__content {
+.menu .courses_main .courses__item--6__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--6__content h3 {
+.menu .courses_main .courses__item--6__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--6__content__description_and_price {
+.menu .courses_main .courses__item--6__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--6__content__description_and_price h4 {
+.menu .courses_main .courses__item--6__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--6__content__description_and_price p {
+.menu .courses_main .courses__item--6__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--6__checked {
+.menu .courses_main .courses__item--6__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,28 +476,28 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--6__checked i {
+.menu .courses_main .courses__item--6__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--6:hover .courses__item--6__content {
+.menu .courses_main .courses__item--6:hover .courses__item--6__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--6:not(:hover) .courses__item--6__content {
+.menu .courses_main .courses__item--6:not(:hover) .courses__item--6__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--6:hover .courses__item--6__checked {
+.menu .courses_main .courses__item--6:hover .courses__item--6__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--6:hover .courses__item--6__checked i {
+.menu .courses_main .courses__item--6:hover .courses__item--6__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--6:not(:hover) .courses__item--6__checked {
+.menu .courses_main .courses__item--6:not(:hover) .courses__item--6__checked {
   animation: checked_hover_out 500ms forwards;
 }
-.menu .courses__item--7 {
+.menu .courses_main .courses__item--7 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -454,33 +506,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 777.7777777778ms;
 }
-.menu .courses__item--7__content {
+.menu .courses_main .courses__item--7__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--7__content h3 {
+.menu .courses_main .courses__item--7__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--7__content__description_and_price {
+.menu .courses_main .courses__item--7__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--7__content__description_and_price h4 {
+.menu .courses_main .courses__item--7__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--7__content__description_and_price p {
+.menu .courses_main .courses__item--7__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--7__checked {
+.menu .courses_main .courses__item--7__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -489,28 +541,28 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--7__checked i {
+.menu .courses_main .courses__item--7__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--7:hover .courses__item--7__content {
+.menu .courses_main .courses__item--7:hover .courses__item--7__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--7:not(:hover) .courses__item--7__content {
+.menu .courses_main .courses__item--7:not(:hover) .courses__item--7__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--7:hover .courses__item--7__checked {
+.menu .courses_main .courses__item--7:hover .courses__item--7__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--7:hover .courses__item--7__checked i {
+.menu .courses_main .courses__item--7:hover .courses__item--7__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--7:not(:hover) .courses__item--7__checked {
+.menu .courses_main .courses__item--7:not(:hover) .courses__item--7__checked {
   animation: checked_hover_out 500ms forwards;
 }
-.menu .courses__item--8 {
+.menu .courses_main .courses__item--8 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -519,33 +571,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 888.8888888889ms;
 }
-.menu .courses__item--8__content {
+.menu .courses_main .courses__item--8__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--8__content h3 {
+.menu .courses_main .courses__item--8__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--8__content__description_and_price {
+.menu .courses_main .courses__item--8__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--8__content__description_and_price h4 {
+.menu .courses_main .courses__item--8__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--8__content__description_and_price p {
+.menu .courses_main .courses__item--8__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--8__checked {
+.menu .courses_main .courses__item--8__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -554,28 +606,28 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--8__checked i {
+.menu .courses_main .courses__item--8__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--8:hover .courses__item--8__content {
+.menu .courses_main .courses__item--8:hover .courses__item--8__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--8:not(:hover) .courses__item--8__content {
+.menu .courses_main .courses__item--8:not(:hover) .courses__item--8__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--8:hover .courses__item--8__checked {
+.menu .courses_main .courses__item--8:hover .courses__item--8__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--8:hover .courses__item--8__checked i {
+.menu .courses_main .courses__item--8:hover .courses__item--8__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--8:not(:hover) .courses__item--8__checked {
+.menu .courses_main .courses__item--8:not(:hover) .courses__item--8__checked {
   animation: checked_hover_out 500ms forwards;
 }
-.menu .courses__item--9 {
+.menu .courses_main .courses__item--9 {
   display: flex;
   border-radius: 15px;
   background-color: white;
@@ -584,33 +636,33 @@ header i {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 1000ms;
 }
-.menu .courses__item--9__content {
+.menu .courses_main .courses__item--9__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-overflow: ellipsis;
 }
-.menu .courses__item--9__content h3 {
+.menu .courses_main .courses__item--9__content h3 {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--9__content__description_and_price {
+.menu .courses_main .courses__item--9__content__description_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.menu .courses__item--9__content__description_and_price h4 {
+.menu .courses_main .courses__item--9__content__description_and_price h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu .courses__item--9__content__description_and_price p {
+.menu .courses_main .courses__item--9__content__description_and_price p {
   margin: 0 1rem;
 }
-.menu .courses__item--9__checked {
+.menu .courses_main .courses__item--9__checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -619,30 +671,31 @@ header i {
   overflow: hidden;
   animation: checked_hover_out 400ms forwards;
 }
-.menu .courses__item--9__checked i {
+.menu .courses_main .courses__item--9__checked i {
   color: white;
   justify-content: center;
   align-items: center;
 }
-.menu .courses__item--9:hover .courses__item--9__content {
+.menu .courses_main .courses__item--9:hover .courses__item--9__content {
   animation: content_hover_in 500ms forwards;
 }
-.menu .courses__item--9:not(:hover) .courses__item--9__content {
+.menu .courses_main .courses__item--9:not(:hover) .courses__item--9__content {
   animation: content_hover_out 500ms forwards;
 }
-.menu .courses__item--9:hover .courses__item--9__checked {
+.menu .courses_main .courses__item--9:hover .courses__item--9__checked {
   min-width: 20%;
   animation: checked_hover_in 500ms forwards;
 }
-.menu .courses__item--9:hover .courses__item--9__checked i {
+.menu .courses_main .courses__item--9:hover .courses__item--9__checked i {
   animation: checked_hover_i_in 500ms forwards;
 }
-.menu .courses__item--9:not(:hover) .courses__item--9__checked {
+.menu .courses_main .courses__item--9:not(:hover) .courses__item--9__checked {
   animation: checked_hover_out 500ms forwards;
 }
 .menu .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .menu .btn__order {
   display: flex;
@@ -651,6 +704,7 @@ header i {
   width: 100%;
   position: relative;
   z-index: 1;
+  background: linear-gradient(#FF79DA, #9356DC);
   background-color: #FF79DA;
   color: white;
   font-size: smaller;
@@ -660,22 +714,15 @@ header i {
   margin: 3rem;
   box-shadow: 5px 5px 10px #D9D9D9;
 }
-.menu .btn__order:hover::after {
-  opacity: 1;
-  box-shadow: 10px 10px 10px #D9D9D9;
+.menu .btn__order:hover {
+  opacity: 0.8;
+  box-shadow: 15px 15px 15px #D9D9D9;
 }
-.menu .btn__order::after {
-  content: "";
-  position: absolute;
-  border-radius: 15px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: radial-gradient(circle, #ff93e1 0%, #782cd3 100%);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 250ms;
+@media screen and (min-width: 1400px) {
+  .menu .btn__order {
+    width: 30%;
+    font-size: medium;
+  }
 }
 
 @keyframes courses_items_appear {

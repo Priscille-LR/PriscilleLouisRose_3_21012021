@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap");
 @import "../base/fonts.css";
+.main_wrapper {
+  max-width: 1500px;
+  margin: auto;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -14,17 +19,27 @@ header a {
     justify-content: flex-start;
   }
 }
+@media screen and (min-width: 1400px) {
+  header {
+    width: 100%;
+  }
+}
 
 .search {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .search .search__bar {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #eaeaea;
+}
+@media screen and (min-width: 1400px) {
+  .search .search__bar {
+    border-radius: 15px 15px 0px 0px;
+  }
 }
 .search .search__bar p {
   margin: 1rem;
@@ -49,29 +64,37 @@ header a {
     font-size: x-large;
     align-items: flex-start;
   }
+  .search .main_title h2 {
+    margin: 1rem 0rem;
+  }
   .search .main_title h4 {
     font-size: large;
   }
 }
 @media screen and (min-width: 800px) and (min-width: 1000px) {
   .search .main_title {
-    background: #ff79da;
-    background: linear-gradient(180deg, #ff79da 0%, #99e2d0 100%);
-    opacity: 0.5;
-    color: white;
+    background: rgba(255, 121, 218, 0.3);
+    background: linear-gradient(180deg, rgba(255, 121, 218, 0.3) 0%, rgba(153, 226, 208, 0.3) 100%);
+    border-radius: 0px 0px 15px 15px;
   }
 }
 .search .main_title__btn {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  width: 50%;
+  width: 60%;
+  border: 0rem;
   background: linear-gradient(#FF79DA, #9356DC);
   color: white;
-  font-size: smaller;
+  font-size: small;
   border-radius: 15px;
   padding: 10px;
+  margin: 2rem 0rem;
   box-shadow: 5px 5px 10px #D9D9D9;
+}
+.search .main_title__btn:hover {
+  opacity: 0.8;
+  box-shadow: 15px 15px 15px #D9D9D9;
 }
 @media screen and (min-width: 800px) {
   .search .main_title__btn {
@@ -82,6 +105,11 @@ header a {
 
 .functioning {
   padding: 2rem 0;
+}
+@media screen and (min-width: 1000px) {
+  .functioning {
+    margin: auto;
+  }
 }
 .functioning h2 {
   margin: 1rem;
@@ -112,11 +140,11 @@ header a {
   box-shadow: 5px 5px 10px #D9D9D9;
   margin: 0.5rem;
   padding: 0.5rem;
-  width: 90%;
 }
 @media screen and (min-width: 800px) {
   .functioning__steps__step {
     margin: 1rem;
+    width: 100%;
   }
 }
 .functioning__steps__step i {
@@ -229,18 +257,33 @@ header a {
   background-color: #99E2D0;
   color: #1f8766;
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 3px;
 }
 
 .footer {
   background-color: #343434;
-  padding: 0.5rem;
+  align-items: center;
+}
+.footer__content {
+  padding: 0.5rem 0rem;
+  width: 100%;
+}
+@media screen and (min-width: 1400px) {
+  .footer__content {
+    width: 100%;
+    max-width: 1500px;
+  }
 }
 .footer h1 {
   font-family: "Shrikhand", cursive;
   color: white;
   padding: 1rem;
+}
+@media screen and (min-width: 1400px) {
+  .footer h1 {
+    padding: 0 2rem;
+  }
 }
 .footer a {
   text-decoration: none;
@@ -249,6 +292,11 @@ header a {
 .footer ul {
   list-style-type: none;
   padding: 0px;
+}
+@media screen and (min-width: 1400px) {
+  .footer ul {
+    padding: 0 2rem;
+  }
 }
 .footer li {
   margin: 1rem;

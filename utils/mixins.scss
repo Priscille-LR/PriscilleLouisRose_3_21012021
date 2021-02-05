@@ -9,3 +9,9 @@
       @content;
     }
   }
+
+  @mixin larger-desktop {
+    @media screen and (min-width: map-get($map: $breakpoints, $key:larger-desktop)){
+      @content;
+    }
+  }
