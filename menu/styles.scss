@@ -83,14 +83,14 @@ header {
         font-weight: lighter;
         font-size: large;
         margin: 1rem;
-        &::after {
-          content: "";
-          position: absolute;
-          background-color: $color-tertiary;
-          width: 2px;
-          // border: 2px solid $color-tertiary;
-          // width: 3rem;
-        }
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   background-color: $color-tertiary;
+        //   width: 2px;
+        //   // border: 2px solid $color-tertiary;
+        //   // width: 3rem;
+        // }
       }
       @include larger-desktop {
         margin: 0rem 1rem;
@@ -102,7 +102,7 @@ header {
           border-radius: 15px;
           background-color: white;
           margin: 1rem;
-          overflow: hidden; //astuce pour hide le checked
+          overflow: hidden; 
           animation: courses_items_appear $anim_duration forwards;
           animation-delay: $anim_delay * $i;
 
@@ -183,7 +183,7 @@ header {
       display: flex;
       flex-wrap: nowrap;
       justify-content: center;
-      width: 100%;
+      width: 50%;
       position: relative;
       z-index: 1;
       background: linear-gradient($color-secondary, $color-primary);
@@ -267,15 +267,6 @@ header {
   }
 }
 
-// @keyframes checked_hover_i_out {
-//   0% {
-//     transform: rotate(360deg);
-//   }
-//   100% {
-//     transform: rotate(-360deg);
-//   }
-// }
-
 @keyframes checked_hover_in {
   0% {
     transform: translateX(100%);
@@ -292,6 +283,15 @@ header {
     transform: rotate(360deg);
   }
 }
+
+// @keyframes checked_hover_i_out {
+//   0% {
+//     transform: rotate(360deg);
+//   }
+//   100% {
+//     transform: rotate(-360deg);
+//   }
+// }
 
 .footer {
   background-color: #343434;
