@@ -168,16 +168,23 @@ header {
     }
   }
 
-  &__item {
-    @for $i from 1 through $nb_courses_items {
-      &--#{$i} {
-        animation: courses_items_appear $anim_duration forwards;
-        animation-delay: $anim_delay * $i;
-      }
-    }
+  // &__item {
+  //   @for $i from 1 through $nb_courses_items {
+  //     &--#{$i} {
+  //       animation: courses_items_appear $anim_duration forwards;
+  //       animation-delay: $anim_delay * $i;
+  //     }
+  //   }
+  // }
+}
+.courses {
+  @for $i from 1 through $nb_courses {
+    &--#{$i} {
+      animation: courses_items_appear $anim_duration forwards;
+      animation-delay: $anim_delay * $i;
+     }
   }
 }
-
 .btn {
   display: flex;
   align-items: center;
@@ -240,61 +247,6 @@ header {
     transform: translateY(0%);
   }
 }
-
-// @keyframes content_hover_out {
-//   0% {
-//     width: 80%;
-//   }
-//   100% {
-//     width: 100%;
-//   }
-// }
-
-// @keyframes content_hover_in {
-//   0% {
-//     width: 100%;
-//   }
-//   100% {
-//     width: 80%;
-//   }
-// }
-
-// @keyframes checked_hover_out {
-//   0% {
-//     width: 20%;
-//     transform: translateX(0%);
-//   }
-//   100% {
-//     width: 0%;
-//     transform: translateX(100%);
-//   }
-// }
-
-// @keyframes checked_hover_in {
-//   0% {
-//     transform: translateX(100%);
-//   }
-//   100% {
-//     transform: translateX(0%);
-//   }
-// }
-// @keyframes checked_hover_i_in {
-//   0% {
-//     transform: rotate(-360deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// // @keyframes checked_hover_i_out {
-// //   0% {
-// //     transform: rotate(360deg);
-// //   }
-// //   100% {
-// //     transform: rotate(-360deg);
-// //   }
-// // }
 
 .footer {
   background-color: #343434;

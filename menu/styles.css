@@ -167,45 +167,18 @@ header i {
 .courses__item:hover .courses__item__checked i {
   transform: rotate(0turn);
 }
-.courses__item--1 {
+
+.courses--1 {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 100ms;
 }
-.courses__item--2 {
+.courses--2 {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 200ms;
 }
-.courses__item--3 {
+.courses--3 {
   animation: courses_items_appear 1000ms forwards;
   animation-delay: 300ms;
-}
-.courses__item--4 {
-  animation: courses_items_appear 1000ms forwards;
-  animation-delay: 400ms;
-}
-.courses__item--5 {
-  animation: courses_items_appear 1000ms forwards;
-  animation-delay: 500ms;
-}
-.courses__item--6 {
-  animation: courses_items_appear 1000ms forwards;
-  animation-delay: 600ms;
-}
-.courses__item--7 {
-  animation: courses_items_appear 1000ms forwards;
-  animation-delay: 700ms;
-}
-.courses__item--8 {
-  animation: courses_items_appear 1000ms forwards;
-  animation-delay: 800ms;
-}
-.courses__item--9 {
-  animation: courses_items_appear 1000ms forwards;
-  animation-delay: 900ms;
-}
-.courses__item--10 {
-  animation: courses_items_appear 1000ms forwards;
-  animation-delay: 1000ms;
 }
 
 .btn {
