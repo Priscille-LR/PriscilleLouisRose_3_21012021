@@ -40,7 +40,7 @@ header {
   z-index: 1;
   border-radius: 20px 20px 0px 0px;
   @include desktop {
-    margin-top: 20rem;;
+    margin-top: 20rem;
   }
   &__title {
     display: flex;
@@ -65,164 +65,167 @@ header {
       }
     }
   }
-  .courses_main {
+}
+.courses_main {
+  display: flex;
+  flex-direction: column;
+  @include desktop {
     display: flex;
-    flex-direction: column;
-    @include larger-desktop {
-      display: flex;
-      flex-direction: row;
-      margin: 1rem;
-      justify-content: center;
-    }
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: center;
+  }
+}
 
-    .courses {
+.courses {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0rem;
+  h2 {
+    font-weight: lighter;
+    font-size: large;
+    margin: 1rem;
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   background-color: $color-tertiary;
+    //   width: 2px;
+    //   // border: 2px solid $color-tertiary;
+    //   // width: 3rem;
+    // }
+  }
+  @include desktop {
+    margin: 0rem 1rem;
+    width: 30%;
+  }
+
+  &__item {
+    display: flex;
+    border-radius: 15px;
+    background-color: white;
+    margin: 1rem;
+    overflow: hidden;
+    width: 95%;
+
+    &__content {
       display: flex;
       flex-direction: column;
-      margin: 1rem 0rem;
-      h2 {
-        font-weight: lighter;
-        font-size: large;
-        margin: 1rem;
-        // &::after {
-        //   content: "";
-        //   position: absolute;
-        //   background-color: $color-tertiary;
-        //   width: 2px;
-        //   // border: 2px solid $color-tertiary;
-        //   // width: 3rem;
-        // }
+      justify-content: stretch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      transition: width 500ms;
+      h3 {
+        padding: 0.5rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
       }
-      @include larger-desktop {
-        margin: 0rem 1rem;
+      &__description_and_price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+        h4 {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        p {
+          margin: 0 1rem;
+        }
       }
+    }
 
-      @for $i from 1 through $nb_courses_items {
-        &__item--#{$i} {
-          display: flex;
-          border-radius: 15px;
-          background-color: white;
-          margin: 1rem;
-          overflow: hidden; 
-          animation: courses_items_appear $anim_duration forwards;
-          animation-delay: $anim_delay * $i;
+    &__checked {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-tertiary;
+      border-radius: 0px 15px 15px 0px;
+      overflow: hidden;
+      width: 0%;
+      transition: width 500ms;
+      i {
+        color: white;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-1turn);
+        transition: transform 400ms ease-in-out;
+      }
+    }
 
-          &__content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-overflow: ellipsis;
-
-            h3 {
-              padding: 0.5rem;
-              text-overflow: ellipsis;
-              overflow: hidden;
-              white-space: nowrap;
-            }
-            &__description_and_price {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding: 0.5rem;
-              h4 {
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-              }
-              p {
-                margin: 0 1rem;
-              }
-            }
-          }
-
-          &__checked {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $color-tertiary;
-            border-radius: 0px 15px 15px 0px;
-            overflow: hidden;
-            animation: checked_hover_out 400ms forwards;
-            i {
-              color: white;
-              justify-content: center;
-              align-items: center;
-            }
-          }
-
-          &:hover .courses__item--#{$i}__content {
-            animation: content_hover_in 500ms forwards;
-          }
-
-          &:not(:hover) .courses__item--#{$i}__content {
-            animation: content_hover_out 500ms forwards;
-          }
-
-          &:hover .courses__item--#{$i}__checked {
-            min-width: 20%;
-            animation: checked_hover_in 500ms forwards;
-            & i {
-              animation: checked_hover_i_in 500ms forwards;
-            }
-          }
-          &:not(:hover) .courses__item--#{$i}__checked {
-            animation: checked_hover_out 500ms forwards;
-            // & i {
-            //   animation: checked_hover_i_out 500ms both;
-            // }
-          }
+    &:hover {
+      .courses__item__content {
+        width: 80%;
+      }
+      .courses__item__checked {
+        width: 20%;
+        & i {
+          transform: rotate(0turn);
         }
       }
     }
   }
-  .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    &__order {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      width: 50%;
-      position: relative;
-      z-index: 1;
-      background: linear-gradient($color-secondary, $color-primary);
-      background-color: $color-secondary;
-      color: white;
-      font-size: smaller;
-      border-radius: 15px;
-      border: 0px;
-      padding: 10px;
-      margin: 3rem;
-      box-shadow: $shadow;
-      &:hover {
-         //&::after {
-          opacity: 0.8;
-          box-shadow: $shadow_hovered;
-         //}
+  &__item {
+    @for $i from 1 through $nb_courses_items {
+      &--#{$i} {
+        animation: courses_items_appear $anim_duration forwards;
+        animation-delay: $anim_delay * $i;
       }
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   border-radius: 15px;
-      //   top: 0;
-      //   right: 0;
-      //   bottom: 0;
-      //   left: 0;
-      //   //background-color: lighten($color-secondary, 10);
-      //   background: radial-gradient(
-      //     circle,
-      //     lighten($color-secondary, 5) 0%,
-      //     darken($color-primary, 10) 100%
-      //   );
-      //   opacity: 0;
-      //   z-index: -1;
-      //   transition: opacity 250ms;
-      // }
-      @include larger-desktop {
-        width: 30%;
-        font-size: medium;
-      }
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__order {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 50%;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient($color-secondary, $color-primary);
+    background-color: $color-secondary;
+    color: white;
+    font-size: smaller;
+    border-radius: 15px;
+    border: 0px;
+    padding: 10px;
+    margin: 3rem;
+    box-shadow: $shadow;
+    &:hover {
+      //&::after {
+      //opacity: 0.8;
+      box-shadow: $shadow_hovered;
+      //}
+    }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   border-radius: 15px;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   //background-color: lighten($color-secondary, 10);
+    //   background: radial-gradient(
+    //     circle,
+    //     lighten($color-secondary, 5) 0%,
+    //     darken($color-primary, 10) 100%
+    //   );
+    //   opacity: 0;
+    //   z-index: -1;
+    //   transition: opacity 250ms;
+    // }
+    @include larger-desktop {
+      width: 30%;
+      font-size: medium;
     }
   }
 }
@@ -238,60 +241,60 @@ header {
   }
 }
 
-@keyframes content_hover_out {
-  0% {
-    width: 80%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes content_hover_in {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 80%;
-  }
-}
-
-@keyframes checked_hover_out {
-  0% {
-    width: 20%;
-    transform: translateX(0%);
-  }
-  100% {
-    width: 0%;
-    transform: translateX(100%);
-  }
-}
-
-@keyframes checked_hover_in {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-@keyframes checked_hover_i_in {
-  0% {
-    transform: rotate(-360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-// @keyframes checked_hover_i_out {
+// @keyframes content_hover_out {
 //   0% {
-//     transform: rotate(360deg);
+//     width: 80%;
 //   }
 //   100% {
-//     transform: rotate(-360deg);
+//     width: 100%;
 //   }
 // }
+
+// @keyframes content_hover_in {
+//   0% {
+//     width: 100%;
+//   }
+//   100% {
+//     width: 80%;
+//   }
+// }
+
+// @keyframes checked_hover_out {
+//   0% {
+//     width: 20%;
+//     transform: translateX(0%);
+//   }
+//   100% {
+//     width: 0%;
+//     transform: translateX(100%);
+//   }
+// }
+
+// @keyframes checked_hover_in {
+//   0% {
+//     transform: translateX(100%);
+//   }
+//   100% {
+//     transform: translateX(0%);
+//   }
+// }
+// @keyframes checked_hover_i_in {
+//   0% {
+//     transform: rotate(-360deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+// // @keyframes checked_hover_i_out {
+// //   0% {
+// //     transform: rotate(360deg);
+// //   }
+// //   100% {
+// //     transform: rotate(-360deg);
+// //   }
+// // }
 
 .footer {
   background-color: #343434;

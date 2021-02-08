@@ -105,14 +105,12 @@ header a {
 
 .functioning {
   padding: 2rem 0;
+  margin: 1rem;
 }
 @media screen and (min-width: 1000px) {
   .functioning {
     margin: auto;
   }
-}
-.functioning h2 {
-  margin: 1rem;
 }
 @media screen and (min-width: 800px) {
   .functioning h2 {
