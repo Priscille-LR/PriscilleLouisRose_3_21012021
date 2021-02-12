@@ -6,29 +6,30 @@
 }
 
 .loader {
-  background-color: transparent;
+  background-color: #F6F6F6;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
+  animation: fadeout 1000ms ease-in-out 3500ms forwards;
 }
 .loader__logo {
   font-family: "Shrikhand", cursive;
   color: black;
   padding: 1rem;
+  animation: logo 1000ms infinite;
+  animation-direction: alternate-reverse;
 }
 .loader__item {
-  display: block;
   width: 100px;
   height: 100px;
   border: 3px solid;
   border-radius: 100%;
-  animation: load 3000ms infinite;
-  margin-left: -70px;
-  margin-top: -70px;
+  animation: load 2000ms backwards infinite ease-in-out;
+  margin: -70px -70px;
   left: 50%;
   top: 50%;
 }
@@ -49,7 +50,7 @@
   width: 6rem;
   height: 6rem;
   top: 51%;
-  left: 51%;
+  left: 52%;
   animation-delay: 400ms;
 }
 .loader #item3 {
@@ -58,17 +59,34 @@
   border-top-color: #99E2D0;
   width: 4rem;
   height: 4rem;
-  top: 52%;
-  left: 52%;
+  top: 54%;
+  left: 56.5%;
   animation-delay: 600ms;
 }
 
 @keyframes load {
   0% {
-    transform: rotate 0deg;
+    transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes logo {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(1.5);
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 header {

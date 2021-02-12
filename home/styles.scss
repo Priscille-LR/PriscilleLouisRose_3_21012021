@@ -10,34 +10,37 @@
 
 //loader
 .loader {
-  background-color: transparent;
+  background-color: $bg-color;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width:100%;
+  animation: fadeout 1000ms ease-in-out 3500ms forwards;
   &__logo {
     font-family: "Shrikhand", cursive;
     color: black;
     padding: 1rem;
+    //height: 100%;
+    animation: logo 1000ms infinite;
+    animation-direction: alternate-reverse;
   }
   &__item {
-  display: block;
+  //display: block;
   width: 100px;
   height: 100px;
   border: 3px solid;
   border-radius: 100%;
-  animation: load 3000ms infinite;
-  margin-left: -70px;
-	margin-top: -70px;
+  animation: load 2000ms backwards infinite ease-in-out;
+  margin: -70px -70px;
+
 	left:50%;
 	top:50%;
   }
   #item1 {
     position: absolute;
-    //z-index: 1;
     border: 3px solid rgba(147,86,220, 0.3);
     border-top-color: $color-primary;
     width: 8rem;
@@ -49,41 +52,54 @@
   }
   #item2 {
     position: absolute;
-    //z-index: 1;
     border: 10px solid rgba(255,121,218, 0.3);
     border-top-color: $color-secondary;
     width: 6rem;
     height: 6rem;
     top: 51%;
-    left: 51%;
+    left: 52%;
     animation-delay: 400ms;
   }
   #item3 {
     position: absolute;
-    //z-index: 1;
     border: 5px solid rgba(153,226,208, 0.3);
     border-top-color: $color-tertiary;
     width: 4rem;
     height: 4rem;
-    top: 52%;
-    left: 52%;
+    top: 54%;
+    left: 56.5%;
     animation-delay: 600ms;
   }
 }
 
 @keyframes load {
   0% {
-    transform: rotate (0deg);
+    transform: rotate(0deg);
   }
-
-  // 50% {
-  //   transform: rotate (180deg);
-  // }
-
   100% {
     transform: rotate(360deg);
   }
 }
+
+@keyframes logo {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(1.5);
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 
 //header
 
