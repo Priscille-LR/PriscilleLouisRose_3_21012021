@@ -1,5 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap");
-@import "../base/fonts.css";
+body {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  font-size: larger;
+  font-weight: bold;
+  color: black;
+  margin: 0.5rem;
+}
+
+h2 {
+  font-size: x-large;
+  color: black;
+  margin: 0.5rem;
+}
+
+h3 {
+  font-size: large;
+  font-weight: bold;
+  color: black;
+  margin: 0.1rem;
+}
+
+h4 {
+  font-size: large;
+  font-weight: lighter;
+  color: black;
+  margin: 0.1rem;
+}
+
+p {
+  font-size: large;
+  font-weight: normal;
+  margin: 0px;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -47,7 +86,7 @@ header i {
 }
 .menu__title {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 }
 @media screen and (min-width: 1000px) {
@@ -56,7 +95,7 @@ header i {
     margin: 2rem;
   }
 }
-.menu__title h1 {
+.menu__title h2 {
   display: flex;
   font-family: "Shrikhand", cursive;
   font-size: 1.5rem;
@@ -64,44 +103,63 @@ header i {
   margin: 1rem;
 }
 @media screen and (min-width: 1000px) {
-  .menu__title h1 {
+  .menu__title h2 {
     font-size: xx-large;
     margin: 2rem;
   }
 }
-.menu__title__hearts {
+.menu__favorite {
   display: flex;
-}
-.menu__title__hearts .far {
-  position: absolute;
-  color: black;
-  z-index: 1;
-}
-.menu__title__hearts .fas {
+  justify-content: center;
+  align-items: center;
   position: relative;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  color: #F6F6F6;
+  border: none;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  overflow: hidden;
+  margin: 0rem 2.5rem;
+  padding: 0;
 }
-.menu__title__hearts:hover .far {
-  position: relative;
-  z-index: 1;
-}
-.menu__title__hearts:hover .fas {
-  display: block;
+.menu__favorite i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  z-index: 0;
-  opacity: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #F6F6F6;
+}
+.menu__favorite::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   background: linear-gradient(45deg, #FF79DA, #9356DC);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+  transform: translateY(3rem);
 }
-@media screen and (min-width: 1400px) {
-  .menu__title {
-    font-size: xxx-large;
-    margin: 2rem;
-  }
+.menu__favorite .far {
+  opacity: 1;
+}
+.menu__favorite .fas {
+  opacity: 0;
+}
+.menu__favorite:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu__favorite:hover .far {
+  opacity: 0;
+}
+.menu__favorite:hover .fas {
+  opacity: 1;
+  mix-blend-mode: lighten;
 }
 
 .courses_main {
@@ -146,9 +204,10 @@ header i {
   display: flex;
   border-radius: 15px;
   background-color: white;
-  margin: 1rem;
+  margin: 0.5rem;
   overflow: hidden;
   width: 95%;
+  box-shadow: 10px 10px 10px rgba(126, 126, 126, 0.3);
 }
 .courses__item__content {
   display: flex;
@@ -158,9 +217,9 @@ header i {
   text-overflow: ellipsis;
   width: 100%;
   transition: width 500ms;
+  padding: 0.5rem;
 }
 .courses__item__content h3 {
-  padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -169,7 +228,6 @@ header i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
 }
 .courses__item__content__description_and_price h4 {
   text-overflow: ellipsis;
@@ -238,7 +296,7 @@ header i {
   border: 0px;
   padding: 10px;
   margin: 3rem;
-  box-shadow: 10px 10px 10px rgba(217, 217, 217, 0.5);
+  box-shadow: 10px 10px 10px rgba(126, 126, 126, 0.3);
 }
 .btn__order:hover::after {
   opacity: 1;
@@ -255,9 +313,9 @@ header i {
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
-  box-shadow: 15px 15px 15px rgba(217, 217, 217, 0.7);
+  box-shadow: 15px 15px 15px rgba(126, 126, 126, 0.5);
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1000px) {
   .btn__order {
     width: 30%;
     font-size: medium;
@@ -282,6 +340,7 @@ header i {
   font-family: "Shrikhand", cursive;
   color: white;
   padding: 1rem;
+  margin: 0rem;
 }
 .footer a {
   text-decoration: none;
