@@ -1,136 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap");
-@import "base/fonts.scss";
+
 @import "utils/variables.scss";
 @import "utils/mixins.scss";
+
+@import "base/fonts.scss";
+
+@import "components/loader.scss";
+@import "components/buttons.scss";
+
+@import "layout/header.scss";
+@import "layout/footer.scss";
 
 .main_wrapper {
   max-width: 1500px;
   margin: auto;
-}
-
-//loader
-
-.loader {
-  background-color: $bg-color;
-  position: fixed;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  animation: fadeout 500ms ease-in-out 4500ms forwards;
-  &__letter {
-    font-family: Shrikhand, serif;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    display: inline-block;
-  }
-
-  @for $i from 1 through 8 {
-    &__letter:nth-child(#{$i}) {
-      animation: bounce 1.5s calc(150ms * #{$i}), color 1.5s ease-in-out 2.8s;
-    }
-  }
-}
-
-@keyframes bounce {
-  0% {
-    opacity: 0;
-    transform: scaleY(1) translateY(-1rem);
-  }
-  25% {
-    opacity: 0.5;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scaleY(0.5);
-  }
-  75% {
-    transform: scaleY(0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes color {
-  0% {
-    opacity: 0.3;
-    color: $color-primary;
-  }
-  10% {
-    opacity: 0.5;
-    color: $color-secondary;
-  }
-  20% {
-    opacity: 0.5;
-    color: $color-tertiary;
-  }
-  30% {
-    opacity: 1;
-    color: $color-secondary;
-  }
-  40% {
-    opacity: 1;
-    color: $color-primary;
-  }
-  50% {
-    opacity: 1;
-    color: $color-secondary;
-  }
-  60% {
-    opacity: 1;
-    color: $color-tertiary;
-  }
-  70% {
-    opacity: 1;
-    color: $color-primary;
-  }
-  80% {
-    opacity: 1;
-    color: $color-secondary;
-  }
-  90% {
-    opacity: 0.5;
-    color: $color-tertiary;
-  }
-  100% {
-    opacity: 0.5;
-    color: $color-secondary;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-//header
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 4rem;
-  // box-shadow: 0px 20px 10px -20px black;
-  & a {
-    margin: 1rem;
-  }
-  @include tablet {
-    justify-content: flex-start;
-  }
-  @include larger-desktop {
-    width: 100%;
-  }
 }
 
 //search & main title
@@ -138,7 +21,6 @@ header {
 .search {
   display: flex;
   flex-direction: column;
-  //position: relative;
   margin-bottom: 1rem;
   .search__bar {
     display: flex;
@@ -166,6 +48,7 @@ header {
   align-items: center;
   padding: 4rem 2rem;
   text-align: center;
+  overflow: hidden;
   @include tablet {
     font-size: x-large;
     align-items: flex-start;
@@ -188,8 +71,18 @@ header {
       height: 100%;
       background-image: url(./images/bg-img2.jpg);
       background-size: cover;
-      filter: blur(1px) opacity(1);
+      filter: opacity(1);
       transition: filter 250ms;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to right, black 0%, transparent 100%);
+      opacity: 1;
+      width: 70%;
+      height: 100%;
     }
     h2,
     h4 {
@@ -198,67 +91,17 @@ header {
     }
     &:hover {
       &::before {
-        filter: blur(5px) opacity(0.5);
+        filter: blur(3px) opacity(0.5);
       }
-      h2, h4 {
-        color: #000000;
+      h2,
+      h4 {
         transition: 300ms;
       }
     }
   }
 }
-.main_title__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
-  @include tablet {
-    width: 30%;
-    justify-content: flex-start;
-    margin: 0rem;
-  }
 
-  & button {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    background: linear-gradient($color-secondary, $color-primary);
-    color: white;
-    font-size: small;
-    border-radius: 30px;
-    border: 0px;
-    padding: 15px;
-    margin: 2rem 0.2rem;
-    box-shadow: $shadow;
-
-    &:hover {
-      &::after {
-        opacity: 1;
-      }
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      overflow: hidden;
-      border-radius: 30px;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(
-        to bottom,
-        lighten($color-secondary, 5) 10%,
-        darken($color-primary, 5) 100%
-      );
-      opacity: 0;
-      z-index: -1;
-      transition: opacity 300ms;
-      box-shadow: $shadow_hovered;
-    }
-  }
-}
+//functioning
 
 .functioning {
   padding: 2rem 0;
@@ -320,9 +163,10 @@ header {
   }
 }
 
+
 // restaurants
 
-.restaurants {
+#restaurants {
   display: flex;
   flex-direction: column;
   background-color: $bg-color;
@@ -332,6 +176,11 @@ header {
     margin: 1rem;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  @include desktop {
+    max-width: 1300px;
+    margin: auto;
+    margin-bottom: 4rem;
   }
   h2 {
     margin: 1rem;
@@ -346,208 +195,63 @@ header {
     justify-content: center;
     width: 100%;
     height: 100%;
-    // padding: 3rem 0;
     @include tablet {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .thumbnail_restaurant {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-radius: 15px;
-      background-color: #fff;
-      box-shadow: $shadow;
-      text-decoration: none;
-      margin: 15px;
-      height: 17rem;
-      @include tablet {
-        margin: 2rem;
-        width: 20rem;
-      }
-      @include desktop {
-        width: 30rem;
-        height: 20rem;
-      }
-      &__picture {
-        width: 100%;
-        height: 70%;
-        border-radius: 15px 15px 0px 0px;
-        object-fit: cover;
-        @include tablet {
-          // max-width: 250px;
-          // width: 20rem;
-        }
-      }
-      &__content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        padding: 1rem;
-        height: 30%;
-
-        &__name {
-          display: flex;
-          flex-direction: column;
-        }
-        // &__hearts {
-        //   display: flex;
-        //   & .far {
-        //     position: absolute;
-        //     color: black;
-        //     z-index: 1;
-        //   }
-        //   & .fas {
-        //     position: relative;
-        //     z-index: -1;
-        //     opacity: 0;
-        //     transition: opacity 1s ease-in-out;
-        //   }
-        //   &:hover {
-        //     & .far {
-        //       position: relative;
-        //       z-index: 1;
-        //     }
-        //     & .fas {
-        //       display: block;
-        //       position: absolute;
-        //       z-index: 0;
-        //       opacity: 1;
-        //       background: linear-gradient(
-        //         45deg,
-        //         $color-secondary,
-        //         $color-primary
-        //       );
-        //       //color: $color-secondary;
-        //       background-clip: text;
-        //       -webkit-text-fill-color: transparent;
-        //     }
-        //   }
-        // }
-      }
-
-      &__favorite {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        border: none;
-        cursor: pointer;
-        //background-color: black;
-        height: 1.5rem;
-        width: 1.5rem;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        & i {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background-color: #fff;
-          color: #000000;
-          text-decoration: none;
-          //transition:  500ms ease-in-out;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          //overflow: hidden;
-          //border-radius: 30px;
-          top: 0;
-          left: 0;
-          background: linear-gradient(45deg, $color-secondary, $color-primary);
-          opacity: 0;
-          height: 100%;
-          width: 100%;
-          transition: 1s;
-          transform: translateY(3rem);
-        }
-        & .far {
-          opacity: 1;
-        }
-        & .fas {
-          opacity: 0;
-        }
-
-        &:hover {
-          &::before {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          & .far {
-            opacity: 0;
-          }
-          & .fas {
-            opacity: 1;
-            mix-blend-mode: lighten;
-          }
-        }
-      }
-      &__new {
-        position: absolute;
-        z-index: 1;
-        top: 5%;
-        right: 5%;
-        background-color: $color-tertiary;
-        color: #1f8766;
-        text-align: center;
-        padding: 0.5rem 1rem;
-        border-radius: 3px;
-      }
+      //justify-content: space-evenly;
     }
   }
-}
 
-// footer
-
-.footer {
-  background-color: #343434;
-  align-items: center;
-
-  &__content {
-    padding: 0.5rem 0rem;
-    width: 100%;
-    @include larger-desktop {
-      width: 100%;
-      max-width: 1500px;
-    }
-  }
-  h1 {
-    font-family: "Shrikhand", cursive;
-    color: white;
-    padding: 1rem;
-    @include larger-desktop {
-      padding: 0 2rem;
-    }
-  }
   a {
     text-decoration: none;
-    color: white;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0px;
-    @include larger-desktop {
-      padding: 0 2rem;
+    @include tablet {
+      width: 50%;
     }
   }
-  li {
+  .thumbnail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: $shadow;
+    text-decoration: none;
     margin: 1rem;
-    ::before {
-      color: white;
-      margin-right: 10px;
+    height: 17rem;
+    max-height: 17rem;
+    @include tablet {
+      margin: 2rem;
+    }
+    &__picture {
+      width: 100%;
+      height: 70%;
+      border-radius: 15px 15px 0px 0px;
+      object-fit: cover;
+    }
+    &__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      height: 30%;
+      &__name {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &__new {
+      position: absolute;
+      z-index: 1;
+      top: 5%;
+      right: 5%;
+      background-color: $color-tertiary;
+      color: #1f8766;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
     }
   }
 }

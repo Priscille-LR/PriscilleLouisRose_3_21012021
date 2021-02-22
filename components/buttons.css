@@ -1,0 +1,196 @@
+.explore_button {
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  background: linear-gradient(#ff79da, #9356dc);
+  color: white;
+  font-size: small;
+  border-radius: 30px;
+  padding: 15px 30px;
+  margin: 2rem 0.2rem;
+  box-shadow: 10px 10px 10px rgba(126, 126, 126, 0.3);
+}
+.explore_button:hover::after {
+  opacity: 1;
+}
+.explore_button::after {
+  content: "";
+  position: absolute;
+  border-radius: 30px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #ff93e1 10%, #8641d8 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 300ms;
+  box-shadow: 15px 15px 15px rgba(126, 126, 126, 0.5);
+}
+@media screen and (min-width: 850px) {
+  .explore_button {
+    width: 30%;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button .order_button {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  width: 40%;
+  background: linear-gradient(#ff79da, #9356dc);
+  color: white;
+  font-size: small;
+  border-radius: 30px;
+  padding: 15px 30px;
+  margin: 2rem 0.2rem;
+  box-shadow: 10px 10px 10px rgba(126, 126, 126, 0.3);
+  text-align: center;
+}
+.button .order_button:hover::after {
+  opacity: 1;
+}
+.button .order_button::after {
+  content: "";
+  position: absolute;
+  border-radius: 30px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #ff93e1 10%, #8641d8 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 300ms;
+  box-shadow: 15px 15px 15px rgba(126, 126, 126, 0.5);
+}
+
+.button_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  background-color: #cbcbcb;
+  height: 2rem;
+  width: 2rem;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.button_home i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  color: #000000;
+  text-decoration: none;
+}
+.button_home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #ff79da, #9356dc);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+  transform: translateY(3rem);
+}
+.button_home .far {
+  opacity: 1;
+}
+.button_home .fas {
+  opacity: 0;
+}
+.button_home:hover::before {
+  z-index: 0;
+  opacity: 1;
+  transform: translateY(0);
+}
+.button_home:hover .far {
+  z-index: -1;
+  opacity: 0;
+}
+.button_home:hover .fas {
+  z-index: 1;
+  opacity: 1;
+  mix-blend-mode: lighten;
+}
+
+.button_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  background-color: #cbcbcb;
+  height: 2rem;
+  width: 2rem;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.button_menu i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f6f6f6;
+  color: #000000;
+  text-decoration: none;
+}
+.button_menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #ff79da, #9356dc);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+  transform: translateY(3rem);
+}
+.button_menu .far {
+  opacity: 1;
+}
+.button_menu .fas {
+  opacity: 0;
+}
+.button_menu:hover::before {
+  z-index: 0;
+  opacity: 1;
+  transform: translateY(0);
+}
+.button_menu:hover .far {
+  z-index: -1;
+  opacity: 0;
+}
+.button_menu:hover .fas {
+  z-index: 1;
+  opacity: 1;
+  mix-blend-mode: lighten;
+}
+
+/*# sourceMappingURL=buttons.css.map */

@@ -1,0 +1,105 @@
+//loader
+
+.loader {
+    background-color: $bg-color;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    animation: fadeout 500ms ease-in-out 4500ms forwards;
+    &__letter {
+      font-family: Shrikhand, serif;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      display: inline-block;
+    }
+  
+    @for $i from 1 through 8 {
+      &__letter:nth-child(#{$i}) {
+        animation: bounce 1.5s calc(150ms * #{$i}), color 1.5s ease-in-out 2.8s;
+      }
+    }
+  }
+  
+  @keyframes bounce {
+    0% {
+      opacity: 0;
+      transform: scaleY(1) translateY(-1rem);
+    }
+    25% {
+      opacity: 0.5;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scaleY(0.5);
+    }
+    75% {
+      transform: scaleY(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes color {
+    0% {
+      opacity: 0.3;
+      color: $color-primary;
+    }
+    10% {
+      opacity: 0.5;
+      color: $color-secondary;
+    }
+    20% {
+      opacity: 0.5;
+      color: $color-tertiary;
+    }
+    30% {
+      opacity: 1;
+      color: $color-secondary;
+    }
+    40% {
+      opacity: 1;
+      color: $color-primary;
+    }
+    50% {
+      opacity: 1;
+      color: $color-secondary;
+    }
+    60% {
+      opacity: 1;
+      color: $color-tertiary;
+    }
+    70% {
+      opacity: 1;
+      color: $color-primary;
+    }
+    80% {
+      opacity: 1;
+      color: $color-secondary;
+    }
+    90% {
+      opacity: 0.5;
+      color: $color-tertiary;
+    }
+    100% {
+      opacity: 0.5;
+      color: $color-secondary;
+    }
+  }
+  
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }

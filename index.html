@@ -21,10 +21,6 @@
   <body>
     <div class="main_wrapper">
       <div class="loader">
-        <!-- <div id="item1" class="loader__item"></div>
-        <div id="item2" class="loader__item"></div>
-        <div id="item3" class="loader__item"></div>
-        <div class="loader__logo">Ohmyfood</div> -->
         <span class="loader__letter">O</span>
         <span class="loader__letter">h</span>
         <span class="loader__letter">m</span>
@@ -35,7 +31,7 @@
         <span class="loader__letter">d</span>
       </div>
 
-      <header>
+      <header class="header_home">
         <a class="logo" href="#"
           ><img class="logo" src="images/logo/ohmyfood@2x.svg" alt="logo"
         /></a>
@@ -53,9 +49,7 @@
           <h4>
             Découvrez des restaurants d'exception, sélectionnés par nos soins.
           </h4>
-          <div class="main_title__btn">
-            <button>Explorer nos restaurants</button>
-          </div>
+          <a class="explore_button" href="#restaurants">Explorer nos restaurants</a>
         </div>
       </section>
 
@@ -78,99 +72,89 @@
       </section>
       <!-- </div> -->
 
-      <section class="restaurants">
+      <section id="restaurants">
         <h2>Restaurants</h2>
         <div class="restaurants__thumbnails">
-          <article class="la_palette_du_gout">
-            <a
-              class="thumbnail_restaurant"
-              href="./menu/la-palette-du-gout.html"
-            >
+          <a href="./menus/la-palette-du-gout.html">
+            <article class="thumbnail">
               <img
-                class="thumbnail_restaurant__picture"
+                class="thumbnail__picture"
                 src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                 alt="photo la Palette du Gout"
               />
-              <div class="thumbnail_restaurant__new">Nouveau</div>
-              <div class="thumbnail_restaurant__content">
-                <div class="thumbnail_restaurant__content__name">
+              <div class="thumbnail__new">Nouveau</div>
+              <div class="thumbnail__content">
+                <div class="thumbnail__content__name">
                   <h3 class="place">La Palette du Gout</h3>
                   <h4 class="district">Ménilmontant</h4>
                 </div>
-                <div class="thumbnail_restaurant__favorite">
+                <div class="favorite_button button_home">
                   <i class="far fa-heart fa-lg"></i>
                   <i class="fas fa-heart fa-lg"></i>
                 </div>
               </div>
-            </a>
-          </article>
+            </article>
+          </a>
 
-          <article class="la_note_enchantee">
-            <a
-              class="thumbnail_restaurant"
-              href="./menu/la-note-enchantee.html"
-            >
+          <a href="./menus/la-note-enchantee.html">
+            <article class="thumbnail">
               <img
-                class="thumbnail_restaurant__picture"
+                class="thumbnail__picture"
                 src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
                 alt="photo La Note Enchantée"
               />
-              <div class="thumbnail_restaurant__new">Nouveau</div>
-              <div class="thumbnail_restaurant__content">
-                <div class="thumbnail_restaurant__content__name">
+              <div class="thumbnail__new">Nouveau</div>
+              <div class="thumbnail__content">
+                <div class="thumbnail__content__name">
                   <h3 class="place">La Note Enchantée</h3>
                   <h4>Charonne</h4>
                 </div>
-                <div class="thumbnail_restaurant__favorite">
+                <div class="favorite_button button_home">
                   <i class="far fa-heart fa-lg"></i>
                   <i class="fas fa-heart fa-lg"></i>
                 </div>
               </div>
-            </a>
-          </article>
+            </article>
+          </a>
 
-          <article class="a_la_francaise">
-            <a class="thumbnail_restaurant" href="./menu/a-la-française.html">
+          <a href="./menus/a-la-française.html">
+            <article class="thumbnail">
               <img
-                class="thumbnail_restaurant__picture"
+                class="thumbnail__picture"
                 src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
                 alt="photo À la Française"
               />
-              <div class="thumbnail_restaurant__content">
-                <div class="thumbnail_restaurant__content__name">
+              <div class="thumbnail__content">
+                <div class="thumbnail__content__name">
                   <h3 class="place">À la Française</h3>
                   <h4>Cité Rouge</h4>
                 </div>
-                <div class="thumbnail_restaurant__favorite">
+                <div class="favorite_button button_home">
                   <i class="far fa-heart fa-lg"></i>
                   <i class="fas fa-heart fa-lg"></i>
                 </div>
               </div>
-            </a>
-          </article>
-
-          <article class="le_delice_des_sens">
-            <a
-              class="thumbnail_restaurant"
-              href="./menu/le-delice-des-sens.html"
-            >
+            </article>
+          </a>
+          <a href="./menus/le-delice-des-sens.html">
+            <article class="thumbnail">
               <img
-                class="thumbnail_restaurant__picture"
+                class="thumbnail__picture"
                 src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                 alt="photo Le Délice des Sens"
               />
-              <div class="thumbnail_restaurant__content">
-                <div class="thumbnail_restaurant__content__name">
+              <div class="thumbnail__content">
+                <div class="thumbnail__content__name">
                   <h3 class="place">Le Délice des Sens</h3>
                   <h4>Folie-Méricourt</h4>
                 </div>
-                <div class="thumbnail_restaurant__favorite">
+                <div class="favorite_button button_home">
                   <i class="far fa-heart fa-lg"></i>
                   <i class="fas fa-heart fa-lg"></i>
                 </div>
               </div>
-            </a>
-          </article>
+            </article>
+          </a>
         </div>
       </section>
     </div>
@@ -179,7 +163,6 @@
       <div class="footer__content">
         <h1>Ohmyfood</h1>
         <div class="footer__item">
-          <!-- <a href="#"> -->
           <ul>
             <li>
               <a href="#"
@@ -196,7 +179,6 @@
               <a href="mailto:priscille.louisrose@gmail.com">Contact</a>
             </li>
           </ul>
-          <!-- </a> -->
         </div>
       </div>
     </footer>

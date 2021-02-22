@@ -1,0 +1,131 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+// explore & order buttons
+
+.explore_button {
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  background: linear-gradient($color-secondary, $color-primary);
+  color: white;
+  font-size: small;
+  border-radius: 30px;
+  padding: 15px 30px;
+  margin: 2rem 0.2rem;
+  box-shadow: $shadow;
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 30px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      to bottom,
+      lighten($color-secondary, 5) 10%,
+      darken($color-primary, 5) 100%
+    );
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 300ms;
+    box-shadow: $shadow_hovered;
+  }
+  @include tablet {
+    width: 30%;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .order_button {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    width: 40%;
+    background: linear-gradient($color-secondary, $color-primary);
+    color: white;
+    font-size: small;
+    border-radius: 30px;
+    padding: 15px 30px;
+    margin: 2rem 0.2rem;
+    box-shadow: $shadow;
+    text-align: center;
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 30px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(
+        to bottom,
+        lighten($color-secondary, 5) 10%,
+        darken($color-primary, 5) 100%
+      );
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 300ms;
+      box-shadow: $shadow_hovered;
+    }
+  }
+  // @include tablet {
+  //   width: 60%;
+  // }
+  // @include desktop {
+  //   width: 70%;
+  // }
+}
+
+//favorite buttons
+
+.button_home {
+  @include favorite_button;
+  & i {
+    @include favorite_button_i(#fff);
+  }
+  &::before {
+    @include favorite_button_before;
+  }
+  & .far {
+    opacity: 1;
+  }
+  & .fas {
+    opacity: 0;
+  }
+  @include hover;
+}
+
+.button_menu {
+  @include favorite_button;
+  & i {
+    @include favorite_button_i($bg-color);
+  }
+  &::before {
+    @include favorite_button_before;
+  }
+  & .far {
+    opacity: 1;
+  }
+  & .fas {
+    opacity: 0;
+  }
+  @include hover;
+}

@@ -1,0 +1,27 @@
+.footer {
+  background-color: #343434;
+  padding: 0.5rem;
+}
+.footer h1 {
+  font-family: "Shrikhand", cursive;
+  color: white;
+  padding: 1rem;
+  margin: 0rem;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+.footer ul {
+  list-style-type: none;
+  padding: 0px;
+}
+.footer li {
+  margin: 1rem;
+}
+.footer li ::before {
+  color: white;
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=footer.css.map */

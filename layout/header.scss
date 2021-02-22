@@ -1,0 +1,50 @@
+@import "../utils/mixins.scss";
+
+//header home
+
+.header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  & a {
+    margin: 1rem;
+  }
+  @include tablet {
+    justify-content: flex-start;
+  }
+  @include desktop {
+    width: 100%;
+  }
+}
+
+//header menus
+
+.header_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  a {
+    text-decoration: none;
+  }
+  .logo {
+    margin: 1rem 0;
+  }
+  i {
+    display: block;
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    // margin-right: 4rem;
+    // margin-left: 1rem;
+    // text-align: center;
+    color: black;
+  }
+  @include tablet {
+    justify-content: space-between;
+    .logo {
+      margin: 1rem;
+    }
+  }
+}

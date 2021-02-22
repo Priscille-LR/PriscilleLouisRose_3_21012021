@@ -14,13 +14,13 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" type="text/css" href="../css/all.min.css" />
-    <link rel="stylesheet" href="../menu/styles.css" />
+    <link rel="stylesheet" href="../pages/styles-menus.css" />
     <title>Ohmyfood!</title>
   </head>
 
   <body>
     <div class="main_wrapper">
-      <header>
+      <header class="header_menu">
         <a class="home" href="../index.html">
           <i class="fas fa-arrow-left"></i
         ></a>
@@ -29,21 +29,19 @@
         /></a>
       </header>
 
-      <!-- <div class="picture"> -->
       <img
         class="restaurant__picture"
-        src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-        alt="photo la Palette du Gout"
+        src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+        alt="photo Le Délice des Sens"
       />
-      <!-- </div> -->
 
       <section class="menu">
         <div class="menu__title">
-          <h2>La Palette du Goût</h2>
-          <button class="menu__favorite">
+          <h2>Le Délice des Sens</h2>
+          <div class="favorite_button button_menu">
             <i class="far fa-heart fa-2x"></i>
             <i class="fas fa-heart fa-2x"></i>
-          </button>
+          </div>
         </div>
 
         <div class="courses_main">
@@ -51,11 +49,11 @@
             <h2>ENTRÉES</h2>
             <div class="courses__item courses__item--1">
               <div class="courses__item__content courses__item--1__content">
-                <h3>Fricassée d'escargots</h3>
+                <h3>Tartare de thon</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--1__content__description_and_price"
                 >
-                  <h4>Au piment d'espelette</h4>
+                  <h4>Assaisonné au yuzu</h4>
                   <p>25€</p>
                 </div>
               </div>
@@ -66,11 +64,11 @@
 
             <div class="courses__item courses__item--2">
               <div class="courses__item__content courses__item--2__content">
-                <h3>Foie-gras de canard mi-cuit</h3>
+                <h3>Bouchée de homard croustillant</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--2__content__description_and_price"
                 >
-                  <h4>Et ses copeaux de truffe noire</h4>
+                  <h4>Et sa farandole de petits légumes</h4>
                   <p>35€</p>
                 </div>
               </div>
@@ -81,11 +79,11 @@
 
             <div class="courses__item courses__item--3">
               <div class="courses__item__content courses__item--3__content">
-                <h3>Oeuf au plat</h3>
+                <h3>Velouté de cèpes</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--3__content__description_and_price"
                 >
-                  <h4>Assaisonné à la truffe, sur son lit de caviar</h4>
+                  <h4>Aux truffes</h4>
                   <p>20€</p>
                 </div>
               </div>
@@ -99,11 +97,11 @@
             <h2>PLATS</h2>
             <div class="courses__item courses__item--4">
               <div class="courses__item__content courses__item--4__content">
-                <h3>Filet de boeuf aux herbes</h3>
+                <h3>Poulet rôti aux herbes de Provence</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--4__content__description_and_price"
                 >
-                  <h4>Accompagné de sa ribambelle de légumes</h4>
+                  <h4>Et sa crème de truffe</h4>
                   <p>40€</p>
                 </div>
               </div>
@@ -114,11 +112,11 @@
 
             <div class="courses__item courses__item--5">
               <div class="courses__item__content courses__item--5__content">
-                <h3>Parmentier de queue de boeuf</h3>
+                <h3>Langouste rôtie</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--5__content__description_and_price"
                 >
-                  <h4>À la truffe noire sur sa purée de panais</h4>
+                  <h4>Et ses légumes de saison</h4>
                   <p>35€</p>
                 </div>
               </div>
@@ -129,11 +127,11 @@
 
             <div class="courses__item courses__item--6">
               <div class="courses__item__content courses__item--6__content">
-                <h3>Filet de turbot</h3>
+                <h3>Côte de boeuf Angus</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--6__content__description_and_price"
                 >
-                  <h4>Aux agrumes</h4>
+                  <h4>Et sa purée de panais</h4>
                   <p>44€</p>
                 </div>
               </div>
@@ -147,11 +145,11 @@
             <h2>DESSERTS</h2>
             <div class="courses__item courses__item--7">
               <div class="courses__item__content courses__item--7__content">
-                <h3>Paris-Brest</h3>
+                <h3>Farandole de desserts</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--7__content__description_and_price"
                 >
-                  <h4>Revisité</h4>
+                  <h4>Du chef</h4>
                   <p>18€</p>
                 </div>
               </div>
@@ -162,11 +160,11 @@
 
             <div class="courses__item courses__item--8">
               <div class="courses__item__content courses__item--8__content">
-                <h3>Macaron au chocolat d'exception</h3>
+                <h3>Crème brûlée</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--8__content__description_and_price"
                 >
-                  <h4>Et glace à la vanille de la Réunion</h4>
+                  <h4>Revisitée</h4>
                   <p>22€</p>
                 </div>
               </div>
@@ -177,11 +175,11 @@
 
             <div class="courses__item courses__item--9">
               <div class="courses__item__content courses__item--9__content">
-                <h3>Mousse au chocolat</h3>
+                <h3>Tiramisù</h3>
                 <div
                   class="courses__item__content__description_and_price courses__item--9__content__description_and_price"
                 >
-                  <h4>Au piment d'espelette et à la truffe noire</h4>
+                  <h4>À la noisette</h4>
                   <p>23€</p>
                 </div>
               </div>
@@ -191,15 +189,14 @@
             </div>
           </div>
         </div>
-        <div class="btn">
-          <button class="btn__order">Commander</button>
+        <div class="button">
+          <a class="order_button" href="#">Commander</a>
         </div>
       </section>
 
       <footer class="footer">
         <h1>Ohmyfood</h1>
         <div class="footer__items">
-          <!-- <a href="#"> -->
           <ul>
             <li>
               <a href="#"
@@ -214,7 +211,6 @@
             <li><a href="#">Mentions légales</a></li>
             <li><a href="mailto:priscille.louisrose@gmail.com">Contact</a></li>
           </ul>
-          <!-- </a> -->
         </div>
       </footer>
     </div>
