@@ -1,0 +1,122 @@
+.courses_main {
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: center;
+  }
+}
+
+.courses {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0rem;
+  h2 {
+    font-weight: lighter;
+    font-size: large;
+    margin: 1rem;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      top: 2.7rem;
+      left: 1rem;
+      width: 2.5rem;
+      background: $color-tertiary;
+    }
+  }
+  @include desktop {
+    margin: 0rem 1rem;
+    width: 30%;
+  }
+
+  &__item {
+    display: flex;
+    border-radius: 15px;
+    background-color: white;
+    margin: 0.5rem;
+    overflow: hidden;
+    width: 95%;
+    box-shadow: $shadow;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      transition: width 500ms;
+      padding: 0.5rem;
+      h3 {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      &__description_and_price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h4 {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        p {
+          margin: 0 1rem;
+        }
+      }
+    }
+
+    &__checked {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-tertiary;
+      border-radius: 0px 15px 15px 0px;
+      overflow: hidden;
+      width: 0%;
+      transition: width 500ms;
+      i {
+        color: white;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-1turn);
+        transition: transform 400ms ease-in-out;
+      }
+    }
+
+    &:hover {
+      .courses__item__content {
+        width: 80%;
+      }
+      .courses__item__checked {
+        width: 20%;
+        & i {
+          transform: rotate(0turn);
+        }
+      }
+    }
+  }
+}
+.courses {
+  @for $i from 1 through $nb_courses {
+    &--#{$i} {
+      animation: courses_items_appear $anim_duration forwards;
+      animation-delay: $anim_delay * $i;
+    }
+  }
+}
+
+@keyframes courses_items_appear {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
