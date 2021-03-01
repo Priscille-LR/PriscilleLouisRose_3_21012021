@@ -539,7 +539,7 @@ p {
 }
 @media screen and (min-width: 1000px) {
   #restaurants {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: auto;
     margin-bottom: 4rem;
   }
