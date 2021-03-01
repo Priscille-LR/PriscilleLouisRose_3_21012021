@@ -1,0 +1,31 @@
+//footer 
+
+.footer {
+    background-color: #343434;
+    padding: 0.5rem;
+    .footer__wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: "Shrikhand", cursive;
+      color: white;
+      padding: 1rem;
+      margin: 0rem;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0px;
+    }
+    li {
+      margin: 1rem;
+      ::before {
+        color: white;
+        margin-right: 10px;
+      }
+    }
+  }
