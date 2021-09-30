@@ -1,11 +1,8 @@
 # OhMyfood
-
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ## Objectif
 
 Intégrer et dynamiser des pages web avec des animations CSS.
-
-- Technologies utilisées:
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
 - Contraintes & compatibilité :
     - Utilisation interdite de JS / frameworks CSS / Inline CSS
@@ -18,4 +15,4 @@ Intégrer et dynamiser des pages web avec des animations CSS.
 TODO
 
 # Lien
-TODO
+https://priscille-lr.github.io/PriscilleLouisRose_3_21012021/
